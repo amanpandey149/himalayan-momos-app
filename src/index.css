@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+  body {
+    @apply bg-bgDark text-white;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .scroll-fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .scroll-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .food-badge {
+    @apply w-[18px] h-[18px] rounded-[4px] inline-flex justify-center items-center bg-transparent border-2 mr-2 shrink-0;
+  }
+  .food-badge::after {
+    content: '';
+    @apply w-[8px] h-[8px] rounded-full;
+  }
+  .food-badge.veg {
+    @apply border-veg;
+  }
+  .food-badge.veg::after {
+    @apply bg-veg;
+  }
+  .food-badge.non-veg {
+    @apply border-nonVeg;
+  }
+  .food-badge.non-veg::after {
+    @apply bg-nonVeg;
+  }
+}
+
+/* Animations */
+@keyframes floating {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(1deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-floating {
+  animation: floating 6s ease-in-out infinite;
+}
+
+@keyframes pulseBorder {
+  0% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(230, 57, 70, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0); }
+}
+
+.pulse {
+  animation: pulseBorder 2s infinite;
+}
