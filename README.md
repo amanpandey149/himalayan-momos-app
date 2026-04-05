@@ -31,7 +31,7 @@ This project is a complete restaurant ordering system that allows users to selec
 ---
 
 ## 🔗 Live Demo
-👉 https://himalayandarjeelingmomos.netlify.app/
+👉https://himalayandarjeelingmomos.netlify.app/
 
 ---
 
